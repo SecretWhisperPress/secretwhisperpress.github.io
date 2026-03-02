@@ -411,6 +411,48 @@
             font-weight: 300;
         }
 
+
+        /* ══════════ COMING SOON ══════════ */
+        .coming-soon-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10,8,6,0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .coming-soon-badge {
+            font-size: 10px;
+            letter-spacing: 0.42em;
+            color: var(--gold);
+            border: 1px solid rgba(201,168,76,0.6);
+            padding: 8px 18px;
+            text-transform: uppercase;
+            background: rgba(10,8,6,0.85);
+            font-family: var(--font);
+        }
+
+        .product-card.coming-soon {
+            cursor: default;
+            pointer-events: none;
+            opacity: 1;
+        }
+
+        .product-card.coming-soon:hover {
+            transform: none !important;
+            box-shadow: none !important;
+            border-color: var(--border) !important;
+        }
+
+        .btn-buy.disabled {
+            background: var(--gold-dk);
+            cursor: default;
+            opacity: 0.65;
+        }
+
         /* ══════════ PRODUCT CARDS ══════════ */
         .products-grid {
             display: grid;
@@ -847,12 +889,12 @@
     <div class="products-grid">
 
         <!-- Book: The Beauty Within — NEW -->
-        <a href="https://secretwhisperpress.gumroad.com/l/the-beauty-within" class="product-card" target="_blank">
+        <a href="#" class="product-card">
             <div class="product-image">
                 <img src="the-beauty-within-cover.jpg" alt="The Beauty Within — The Sacred Frequency">
             </div>
             <div class="product-info">
-                <div class="product-badge">eBook · PDF &nbsp;·&nbsp; <span style="color:var(--gold2);">New</span></div>
+                <div class="product-badge">eBook · PDF</div>
                 <div class="product-name">The Beauty Within</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">
@@ -860,13 +902,13 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
-                    <span class="btn-buy">Buy Now</span>
+                    <span class="btn-buy disabled">Coming Soon</span>
                 </div>
             </div>
         </a>
 
         <!-- Book: Feel the Horizon Within -->
-        <a href="https://secretwhisperpress.gumroad.com/l/feel-the-horizon-within" class="product-card" target="_blank">
+        <a href="#" class="product-card">
             <div class="product-image">
                 <img src="feel-the-horizon-within-cover.jpg" alt="Feel the Horizon Within">
             </div>
@@ -879,13 +921,13 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
-                    <span class="btn-buy">Buy Now</span>
+                    <span class="btn-buy disabled">Coming Soon</span>
                 </div>
             </div>
         </a>
 
         <!-- Book: The Quiet Architects -->
-        <a href="https://secretwhisperpress.gumroad.com/l/quiet-architects" class="product-card" target="_blank">
+        <a href="#" class="product-card">
             <div class="product-image">
                 <img src="the-quiet-architects-cover.jpg" alt="The Quiet Architects">
             </div>
@@ -898,13 +940,13 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price">$19.99 <span>eBook</span></div>
-                    <span class="btn-buy">Buy Now</span>
+                    <span class="btn-buy disabled">Coming Soon</span>
                 </div>
             </div>
         </a>
 
         <!-- Book: Before You Were Needed -->
-        <a href="https://secretwhisperpress.gumroad.com/l/before-needed" class="product-card" target="_blank">
+        <a href="#" class="product-card">
             <div class="product-image">
                 <img src="before-needed-cover v2.jpg" alt="Before You Were Needed">
             </div>
@@ -917,13 +959,13 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
-                    <span class="btn-buy">Buy Now</span>
+                    <span class="btn-buy disabled">Coming Soon</span>
                 </div>
             </div>
         </a>
 
         <!-- Book: The Invisible ATM -->
-        <a href="https://secretwhisperpress.gumroad.com/l/invisible-atm" class="product-card" target="_blank">
+        <a href="#" class="product-card">
             <div class="product-image">
                 <img src="invisible-atm-cover.jpg" alt="The Invisible ATM">
             </div>
@@ -936,7 +978,7 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price">$21.99 <span>eBook</span></div>
-                    <span class="btn-buy">Buy Now</span>
+                    <span class="btn-buy disabled">Coming Soon</span>
                 </div>
             </div>
         </a>
