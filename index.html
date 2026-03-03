@@ -22,12 +22,7 @@
             --font: 'Cormorant Garamond', Georgia, serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
         body {
@@ -78,17 +73,9 @@
             text-decoration: none;
         }
 
-        .compass-sm {
-            width: 42px;
-            height: 42px;
-            flex-shrink: 0;
-        }
+        .compass-sm { width: 42px; height: 42px; flex-shrink: 0; }
 
-        .logo-text-wrap {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
+        .logo-text-wrap { display: flex; flex-direction: column; gap: 1px; }
 
         .logo-name {
             font-size: 15px;
@@ -107,11 +94,7 @@
             font-style: italic;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-        }
+        nav { display: flex; align-items: center; gap: 36px; }
 
         nav a {
             font-size: 12px;
@@ -127,22 +110,15 @@
         nav a::after {
             content: '';
             position: absolute;
-            bottom: -3px;
-            left: 0;
-            right: 0;
+            bottom: -3px; left: 0; right: 0;
             height: 1px;
             background: var(--gold);
             transform: scaleX(0);
             transition: transform 0.3s;
         }
 
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-        }
+        nav a:hover { color: var(--gold); }
+        nav a:hover::after { transform: scaleX(1); }
 
         .nav-cta {
             font-size: 11px;
@@ -155,13 +131,8 @@
             transition: background 0.3s;
         }
 
-        .nav-cta:hover {
-            background: var(--gold2) !important;
-        }
-
-        .nav-cta::after {
-            display: none !important;
-        }
+        .nav-cta:hover { background: var(--gold2) !important; }
+        .nav-cta::after { display: none !important; }
 
         /* ══════════ HERO ══════════ */
         .hero {
@@ -176,17 +147,19 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(139,105,20,0.12) 0%, transparent 60%),
-                        radial-gradient(ellipse 40% 60% at 20% 30%, rgba(20,15,5,0.8) 0%, transparent 70%),
-                        linear-gradient(135deg, #0A0806 0%, #100D09 40%, #0C0A05 100%);
+            background:
+                radial-gradient(ellipse 60% 80% at 70% 50%, rgba(139,105,20,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 20% 30%, rgba(20,15,5,0.8) 0%, transparent 70%),
+                linear-gradient(135deg, #0A0806 0%, #100D09 40%, #0C0A05 100%);
         }
 
         .hero-bg::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+            background-image:
+                linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
             background-size: 80px 80px;
             mask: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%);
         }
@@ -206,14 +179,8 @@
         }
 
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(32px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-eyebrow {
@@ -229,8 +196,7 @@
             justify-content: center;
         }
 
-        .hero-eyebrow::before,
-        .hero-eyebrow::after {
+        .hero-eyebrow::before, .hero-eyebrow::after {
             content: '';
             width: 40px;
             height: 1px;
@@ -248,9 +214,7 @@
             margin-bottom: 28px;
         }
 
-        .hero-title .gold-word {
-            color: var(--gold);
-        }
+        .hero-title .gold-word { color: var(--gold); }
 
         .hero-rule {
             display: flex;
@@ -267,8 +231,7 @@
         }
 
         .hero-rule-diamond {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             border: 1.5px solid var(--gold);
             transform: rotate(45deg);
             flex-shrink: 0;
@@ -307,10 +270,7 @@
             transition: background 0.3s, transform 0.2s;
         }
 
-        .btn-primary:hover {
-            background: var(--gold2);
-            transform: translateY(-2px);
-        }
+        .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
 
         .btn-secondary {
             display: inline-block;
@@ -326,10 +286,7 @@
             transition: border-color 0.3s, color 0.3s;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
+        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
         /* ══════════ SECTION DIVIDER ══════════ */
         .section-divider {
@@ -347,26 +304,9 @@
             background: linear-gradient(to right, transparent, rgba(201,168,76,0.25), transparent);
         }
 
-        .sd-ornament {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0 20px;
-        }
-
-        .sd-dot {
-            width: 4px;
-            height: 4px;
-            background: var(--gold-dk);
-            border-radius: 50%;
-        }
-
-        .sd-diamond {
-            width: 8px;
-            height: 8px;
-            border: 1px solid rgba(201,168,76,0.45);
-            transform: rotate(45deg);
-        }
+        .sd-ornament { display: flex; align-items: center; gap: 10px; padding: 0 20px; }
+        .sd-dot { width: 4px; height: 4px; background: var(--gold-dk); border-radius: 50%; }
+        .sd-diamond { width: 8px; height: 8px; border: 1px solid rgba(201,168,76,0.45); transform: rotate(45deg); }
 
         /* ══════════ SECTIONS ══════════ */
         .section {
@@ -375,10 +315,7 @@
             margin: 0 auto;
         }
 
-        .section-head {
-            text-align: center;
-            margin-bottom: 56px;
-        }
+        .section-head { text-align: center; margin-bottom: 56px; }
 
         .section-eyebrow {
             font-size: 9px;
@@ -411,7 +348,6 @@
             font-weight: 300;
         }
 
-
         /* ══════════ COMING SOON ══════════ */
         .coming-soon-overlay {
             position: absolute;
@@ -435,23 +371,10 @@
             font-family: var(--font);
         }
 
-        .product-card.coming-soon {
-            cursor: default;
-            pointer-events: none;
-            opacity: 1;
-        }
+        .product-card.coming-soon { cursor: default; pointer-events: none; opacity: 1; }
+        .product-card.coming-soon:hover { transform: none !important; box-shadow: none !important; border-color: var(--border) !important; }
 
-        .product-card.coming-soon:hover {
-            transform: none !important;
-            box-shadow: none !important;
-            border-color: var(--border) !important;
-        }
-
-        .btn-buy.disabled {
-            background: var(--gold-dk);
-            cursor: default;
-            opacity: 0.65;
-        }
+        .btn-buy.disabled { background: var(--gold-dk); cursor: default; opacity: 0.65; }
 
         /* ══════════ PRODUCT CARDS ══════════ */
         .products-grid {
@@ -487,9 +410,7 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 4px 20px rgba(139,105,20,0.12);
         }
 
-        .product-card:hover::before {
-            opacity: 1;
-        }
+        .product-card:hover::before { opacity: 1; }
 
         .product-image {
             aspect-ratio: 3/4;
@@ -516,9 +437,7 @@
             box-shadow: -4px 0 16px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.8);
         }
 
-        .product-info {
-            padding: 24px 26px 26px;
-        }
+        .product-info { padding: 24px 26px 26px; }
 
         .product-badge {
             display: inline-block;
@@ -539,12 +458,7 @@
             line-height: 1.2;
         }
 
-        .product-author {
-            font-size: 13px;
-            font-style: italic;
-            color: var(--mist);
-            margin-bottom: 12px;
-        }
+        .product-author { font-size: 13px; font-style: italic; color: var(--mist); margin-bottom: 12px; }
 
         .product-desc {
             font-size: 14px;
@@ -554,17 +468,9 @@
             font-weight: 300;
         }
 
-        .product-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        .product-footer { display: flex; align-items: center; justify-content: space-between; }
 
-        .product-price {
-            font-size: 26px;
-            font-weight: 600;
-            color: var(--gold);
-        }
+        .product-price { font-size: 26px; font-weight: 600; color: var(--gold); }
 
         .product-price span {
             font-size: 13px;
@@ -590,9 +496,7 @@
             display: inline-block;
         }
 
-        .btn-buy:hover {
-            background: var(--gold2);
-        }
+        .btn-buy:hover { background: var(--gold2); }
 
         /* ══════════ QUOTE BAND ══════════ */
         .quote-band {
@@ -629,8 +533,7 @@
             font-size: 80px;
             color: var(--gold-dk);
             position: absolute;
-            top: -20px;
-            left: -30px;
+            top: -20px; left: -30px;
             font-style: normal;
             line-height: 1;
         }
@@ -643,11 +546,7 @@
         }
 
         /* ══════════ ABOUT PRESS ══════════ */
-        .about-press-section {
-            max-width: 680px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .about-press-section { max-width: 680px; margin: 0 auto; text-align: center; }
 
         .about-press-section p {
             font-size: 17px;
@@ -672,10 +571,7 @@
             padding: 56px 60px 36px;
         }
 
-        .footer-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
 
         .footer-top {
             display: grid;
@@ -686,14 +582,8 @@
             margin-bottom: 28px;
         }
 
-        .footer-brand .logo-name {
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .footer-brand .logo-sub {
-            font-size: 9px;
-        }
+        .footer-brand .logo-name { font-size: 16px; margin-bottom: 4px; }
+        .footer-brand .logo-sub { font-size: 9px; }
 
         .footer-tagline {
             font-size: 14px;
@@ -722,30 +612,14 @@
             transition: color 0.3s;
         }
 
-        .footer-col a:hover {
-            color: var(--gold);
-        }
+        .footer-col a:hover { color: var(--gold); }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
 
-        .footer-copy {
-            font-size: 11px;
-            color: rgba(139,105,20,0.40);
-            letter-spacing: 0.18em;
-        }
+        .footer-copy { font-size: 11px; color: rgba(139,105,20,0.40); letter-spacing: 0.18em; }
+        .footer-quote { font-size: 10px; color: rgba(139,105,20,0.30); letter-spacing: 0.22em; font-style: italic; }
 
-        .footer-quote {
-            font-size: 10px;
-            color: rgba(139,105,20,0.30);
-            letter-spacing: 0.22em;
-            font-style: italic;
-        }
-
-        /* ══════════ FEATURED PRODUCT CARD ══════════ */
+        /* ══════════ FEATURED CARD ══════════ */
         .product-card.featured {
             border-color: rgba(201,168,76,0.45);
             background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
@@ -780,56 +654,23 @@
             text-decoration: none;
         }
 
-        .btn-buy:not(.disabled):hover {
-            background: var(--gold2);
-        }
+        .btn-buy:not(.disabled):hover { background: var(--gold2); }
 
         /* ══════════ RESPONSIVE ══════════ */
         @media (max-width: 1000px) {
-            .footer-top {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
         }
 
         @media (max-width: 600px) {
-            header {
-                padding: 0 24px;
-            }
-
-            .section {
-                padding: 60px 24px;
-            }
-
-            .hero {
-                padding: 60px 24px;
-            }
-
-            nav {
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 10px;
-            }
-
-            .nav-cta {
-                display: none;
-            }
-
-            .footer-top {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 12px;
-                align-items: flex-start;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
+            header { padding: 0 24px; }
+            .section { padding: 60px 24px; }
+            .hero { padding: 60px 24px; }
+            nav { gap: 20px; }
+            nav a { font-size: 10px; }
+            .nav-cta { display: none; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
+            .products-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -844,7 +685,6 @@
 <header>
     <div class="header-inner">
         <a href="#" class="header-logo">
-            <!-- Compass SVG -->
             <svg class="compass-sm" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18.5" stroke="#8B6914" stroke-width="0.75" stroke-opacity="0.45"/>
                 <circle cx="20" cy="20" r="13.5" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.30"/>
@@ -861,7 +701,6 @@
                 <div class="logo-sub">Est. 2026</div>
             </div>
         </a>
-
         <nav>
             <a href="#books">Books</a>
             <a href="#about">About</a>
@@ -927,7 +766,7 @@
 
     <div class="products-grid">
 
-        <!-- Book: The Elegance of Being — LIVE -->
+        <!-- The Elegance of Being -->
         <a href="#" class="product-card featured">
             <div class="product-image">
                 <img src="elegance-of-being-cover.png" alt="The Elegance of Being — A Trilogy by Mehdi Zaki">
@@ -946,6 +785,7 @@
             </div>
         </a>
 
+        <!-- The Beauty Within -->
         <a href="#" class="product-card">
             <div class="product-image">
                 <img src="the-beauty-within-cover.jpg" alt="The Beauty Within — The Sacred Frequency">
@@ -964,7 +804,7 @@
             </div>
         </a>
 
-        <!-- Book: Feel the Horizon Within -->
+        <!-- Feel the Horizon Within -->
         <a href="#" class="product-card">
             <div class="product-image">
                 <img src="feel-the-horizon-within-cover.jpg" alt="Feel the Horizon Within">
@@ -983,7 +823,7 @@
             </div>
         </a>
 
-        <!-- Book: The Quiet Architects -->
+        <!-- The Quiet Architects -->
         <a href="#" class="product-card">
             <div class="product-image">
                 <img src="the-quiet-architects-cover.jpg" alt="The Quiet Architects">
@@ -1002,7 +842,7 @@
             </div>
         </a>
 
-        <!-- Book: Before You Were Needed -->
+        <!-- Before You Were Needed -->
         <a href="#" class="product-card">
             <div class="product-image">
                 <img src="before-needed-cover v2.jpg" alt="Before You Were Needed">
@@ -1021,10 +861,10 @@
             </div>
         </a>
 
-        <!-- Book: The Invisible ATM -->
-        <a href="#" class="product-card">
+        <!-- The Invisible ATM -->
+        <a href="https://secretwhisperpress.gumroad.com/l/invisible-atm" target="_blank" class="product-card">
             <div class="product-image">
-                <img src="invisible-atm-cover.jpg" alt="The Invisible ATM">
+                <img src="The_Invisible_ATM_Book_page_Cover_v3.png" alt="The Invisible ATM">
             </div>
             <div class="product-info">
                 <div class="product-badge">eBook · PDF</div>
@@ -1035,7 +875,7 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price">$21.99 <span>eBook</span></div>
-                    <span class="btn-buy disabled">Coming Soon</span>
+                    <a href="https://secretwhisperpress.gumroad.com/l/invisible-atm" target="_blank" class="btn-buy">Get It Now</a>
                 </div>
             </div>
         </a>
@@ -1061,16 +901,13 @@
         <h2 class="section-title">About Secret Whisper Press</h2>
         <div class="section-rule"></div>
     </div>
-
     <div class="about-press-section">
         <p>
             Secret Whisper Press was founded on a single conviction: that the most consequential books are not the loudest ones.
         </p>
-
         <p>
             In an age of noise, acceleration, and information without wisdom, we publish for the reader who has grown tired of being told what to do — and is ready, instead, to understand who they are. Our books do not offer shortcuts. They offer something rarer: a reorientation. A return to the self as the source of all genuine prosperity, creativity, and change.
         </p>
-
         <p class="press-manifesto">
             We believe the most important work is cultivated — quietly, deliberately, from within.
         </p>
@@ -1081,13 +918,11 @@
 <footer id="contact">
     <div class="footer-inner">
         <div class="footer-top">
-
             <div class="footer-brand">
                 <div class="logo-name">Secret Whisper Press</div>
                 <div class="logo-sub">Est. 2026</div>
                 <p class="footer-tagline">Books for the person who knows that something essential is missing — and went looking.</p>
             </div>
-
             <div class="footer-col">
                 <h4>Store</h4>
                 <a href="#" target="_blank">The Elegance of Being ✦ New</a>
@@ -1098,17 +933,14 @@
                 <a href="https://secretwhisperpress.gumroad.com/l/before-needed" target="_blank">Before You Were Needed</a>
                 <a href="https://secretwhisperpress.gumroad.com/l/invisible-atm" target="_blank">The Invisible ATM</a>
             </div>
-
             <div class="footer-col">
                 <h4>Press</h4>
                 <a href="#about">About</a>
                 <a href="https://yoursubstack.substack.com" target="_blank">Journal</a>
-                <a href="/cdn-cgi/l/email-protection#dfbcb0b1abbebcab9facbabcadbaaba8b7b6acafbaadafadbaacacf1bcb0b2">Contact</a>
+                <a href="mailto:contact@secretwhisperpress.com">Contact</a>
                 <a href="#">Rights &amp; Permissions</a>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <div class="footer-copy">© 2026 Secret Whisper Press · All rights reserved</div>
             <div class="footer-quote">The soil is the self. Tend to that first.</div>
