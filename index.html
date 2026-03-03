@@ -745,6 +745,45 @@
             font-style: italic;
         }
 
+        /* ══════════ FEATURED PRODUCT CARD ══════════ */
+        .product-card.featured {
+            border-color: rgba(201,168,76,0.45);
+            background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card.featured::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
+        }
+
+        .new-badge {
+            background: rgba(201,168,76,0.12) !important;
+            border: 1px solid rgba(201,168,76,0.38) !important;
+            color: var(--gold2) !important;
+        }
+
+        .btn-buy:not(.disabled) {
+            background: var(--gold);
+            color: var(--bg);
+            padding: 10px 22px;
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-buy:not(.disabled):hover {
+            background: var(--gold2);
+        }
+
         /* ══════════ RESPONSIVE ══════════ */
         @media (max-width: 1000px) {
             .footer-top {
@@ -798,7 +837,7 @@
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announcement">
-    Five titles available now &nbsp;·&nbsp; Free worldwide digital delivery
+    New release &nbsp;·&nbsp; The Elegance of Being — available now &nbsp;·&nbsp; Free worldwide digital delivery
 </div>
 
 <!-- HEADER -->
@@ -888,7 +927,25 @@
 
     <div class="products-grid">
 
-        <!-- Book: The Beauty Within — NEW -->
+        <!-- Book: The Elegance of Being — LIVE -->
+        <a href="https://gumroad.com/l/the-elegance-of-being" target="_blank" class="product-card featured">
+            <div class="product-image">
+                <img src="elegance-of-being-cover.jpg" alt="The Elegance of Being — A Trilogy by Mehdi Zaki">
+            </div>
+            <div class="product-info">
+                <div class="product-badge new-badge">New Release · eBook · PDF</div>
+                <div class="product-name">The Elegance of Being</div>
+                <div class="product-author">by Mehdi Zaki</div>
+                <p class="product-desc">
+                    A Trilogy on the Sacred Architecture of Inner Beauty. Three books that move from becoming, through awakening, to the quiet art of living it. For those who have always known that depth is more beautiful than shine.
+                </p>
+                <div class="product-footer">
+                    <div class="product-price">$18.00 <span>eBook</span></div>
+                    <span class="btn-buy">Get the Trilogy →</span>
+                </div>
+            </div>
+        </a>
+
         <a href="#" class="product-card">
             <div class="product-image">
                 <img src="the-beauty-within-cover.jpg" alt="The Beauty Within — The Sacred Frequency">
@@ -1033,6 +1090,7 @@
 
             <div class="footer-col">
                 <h4>Store</h4>
+                <a href="https://gumroad.com/l/the-elegance-of-being" target="_blank">The Elegance of Being ✦ New</a>
                 <a href="https://secretwhisperpress.gumroad.com" target="_blank">Browse All Books</a>
                 <a href="https://secretwhisperpress.gumroad.com/l/the-beauty-within" target="_blank">The Beauty Within</a>
                 <a href="https://secretwhisperpress.gumroad.com/l/feel-the-horizon-within" target="_blank">Feel the Horizon Within</a>
