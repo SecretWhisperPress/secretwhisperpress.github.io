@@ -24,16 +24,8 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--ivory); font-family: var(--font); min-height: 100vh; overflow-x: hidden; }
 
-        body {
-            background: var(--bg);
-            color: var(--ivory);
-            font-family: var(--font);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* ══════════ ANNOUNCEMENT BAR ══════════ */
         .announcement {
             background: var(--gold-dk);
             border-bottom: 1px solid rgba(201,168,76,0.3);
@@ -46,700 +38,173 @@
             font-weight: 400;
         }
 
-        /* ══════════ HEADER ══════════ */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             background: rgba(10,8,6,0.97);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             padding: 0 60px;
         }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 82px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-        }
-
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 82px; max-width: 1400px; margin: 0 auto; }
+        .header-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
         .compass-sm { width: 42px; height: 42px; flex-shrink: 0; }
-
         .logo-text-wrap { display: flex; flex-direction: column; gap: 1px; }
-
-        .logo-name {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.30em;
-            color: var(--ivory);
-            text-transform: uppercase;
-            line-height: 1;
-        }
-
-        .logo-sub {
-            font-size: 9px;
-            letter-spacing: 0.35em;
-            color: var(--gold-dim);
-            text-transform: uppercase;
-            font-style: italic;
-        }
-
+        .logo-name { font-size: 15px; font-weight: 600; letter-spacing: 0.30em; color: var(--ivory); text-transform: uppercase; line-height: 1; }
+        .logo-sub { font-size: 9px; letter-spacing: 0.35em; color: var(--gold-dim); text-transform: uppercase; font-style: italic; }
         nav { display: flex; align-items: center; gap: 36px; }
-
-        nav a {
-            font-size: 12px;
-            letter-spacing: 0.28em;
-            color: var(--mist);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 400;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px; left: 0; right: 0;
-            height: 1px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
+        nav a { font-size: 12px; letter-spacing: 0.28em; color: var(--mist); text-decoration: none; text-transform: uppercase; font-weight: 400; transition: color 0.3s; position: relative; }
+        nav a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
         nav a:hover { color: var(--gold); }
         nav a:hover::after { transform: scaleX(1); }
-
-        .nav-cta {
-            font-size: 11px;
-            letter-spacing: 0.28em;
-            color: var(--bg) !important;
-            background: var(--gold);
-            padding: 10px 22px;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
+        .nav-cta { font-size: 11px; letter-spacing: 0.28em; color: var(--bg) !important; background: var(--gold); padding: 10px 22px; text-transform: uppercase; font-weight: 600; transition: background 0.3s; }
         .nav-cta:hover { background: var(--gold2) !important; }
         .nav-cta::after { display: none !important; }
 
-        /* ══════════ HERO ══════════ */
-        .hero {
-            position: relative;
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            padding: 80px 60px;
-        }
-
+        .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; padding: 80px 60px; }
         .hero-bg {
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 60% 80% at 70% 50%, rgba(139,105,20,0.12) 0%, transparent 60%),
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(139,105,20,0.12) 0%, transparent 60%),
                 radial-gradient(ellipse 40% 60% at 20% 30%, rgba(20,15,5,0.8) 0%, transparent 70%),
                 linear-gradient(135deg, #0A0806 0%, #100D09 40%, #0C0A05 100%);
         }
-
         .hero-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+            content: ''; position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
             background-size: 80px 80px;
             mask: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%);
         }
-
-        .hero-inner {
-            position: relative;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;
-        }
-
-        .hero-text {
-            animation: fadeUp 1.2s ease both;
-            max-width: 820px;
-            margin: 0 auto;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(32px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-eyebrow {
-            font-size: 10px;
-            letter-spacing: 0.55em;
-            color: var(--gold-dim);
-            text-transform: uppercase;
-            font-weight: 400;
-            margin-bottom: 22px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            justify-content: center;
-        }
-
-        .hero-eyebrow::before, .hero-eyebrow::after {
-            content: '';
-            width: 40px;
-            height: 1px;
-            background: var(--gold-dim);
-            flex-shrink: 0;
-        }
-
-        .hero-title {
-            font-size: clamp(42px, 5vw, 68px);
-            font-weight: 700;
-            line-height: 0.92;
-            color: var(--ivory);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 28px;
-        }
-
+        .hero-inner { position: relative; max-width: 1400px; margin: 0 auto; width: 100%; text-align: center; }
+        .hero-text { animation: fadeUp 1.2s ease both; max-width: 820px; margin: 0 auto; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-eyebrow { font-size: 10px; letter-spacing: 0.55em; color: var(--gold-dim); text-transform: uppercase; font-weight: 400; margin-bottom: 22px; display: flex; align-items: center; gap: 14px; justify-content: center; }
+        .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--gold-dim); flex-shrink: 0; }
+        .hero-title { font-size: clamp(42px, 5vw, 68px); font-weight: 700; line-height: 0.92; color: var(--ivory); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 28px; }
         .hero-title .gold-word { color: var(--gold); }
-
-        .hero-rule {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 0 auto 28px;
-            justify-content: center;
-        }
-
-        .hero-rule-line {
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-
-        .hero-rule-diamond {
-            width: 8px; height: 8px;
-            border: 1.5px solid var(--gold);
-            transform: rotate(45deg);
-            flex-shrink: 0;
-        }
-
-        .hero-subtitle {
-            font-size: 19px;
-            font-style: italic;
-            font-weight: 300;
-            color: var(--mist);
-            line-height: 1.6;
-            margin-bottom: 48px;
-            max-width: 620px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--bg);
-            font-size: 11px;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            font-weight: 700;
-            padding: 16px 36px;
-            text-decoration: none;
-            font-family: var(--font);
-            transition: background 0.3s, transform 0.2s;
-        }
-
+        .hero-rule { display: flex; align-items: center; gap: 12px; margin: 0 auto 28px; justify-content: center; }
+        .hero-rule-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+        .hero-rule-diamond { width: 8px; height: 8px; border: 1.5px solid var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+        .hero-subtitle { font-size: 19px; font-style: italic; font-weight: 300; color: var(--mist); line-height: 1.6; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .btn-primary { display: inline-block; background: var(--gold); color: var(--bg); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 700; padding: 16px 36px; text-decoration: none; font-family: var(--font); transition: background 0.3s, transform 0.2s; }
         .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
-
-        .btn-secondary {
-            display: inline-block;
-            border: 1px solid rgba(201,168,76,0.35);
-            color: var(--mist);
-            font-size: 11px;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            font-weight: 400;
-            padding: 16px 36px;
-            text-decoration: none;
-            font-family: var(--font);
-            transition: border-color 0.3s, color 0.3s;
-        }
-
+        .btn-secondary { display: inline-block; border: 1px solid rgba(201,168,76,0.35); color: var(--mist); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 400; padding: 16px 36px; text-decoration: none; font-family: var(--font); transition: border-color 0.3s, color 0.3s; }
         .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-        /* ══════════ SECTION DIVIDER ══════════ */
-        .section-divider {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            padding: 0 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .sd-line {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(201,168,76,0.25), transparent);
-        }
-
+        .section-divider { display: flex; align-items: center; padding: 0 60px; max-width: 1400px; margin: 0 auto; }
+        .sd-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.25), transparent); }
         .sd-ornament { display: flex; align-items: center; gap: 10px; padding: 0 20px; }
         .sd-dot { width: 4px; height: 4px; background: var(--gold-dk); border-radius: 50%; }
         .sd-diamond { width: 8px; height: 8px; border: 1px solid rgba(201,168,76,0.45); transform: rotate(45deg); }
 
-        /* ══════════ SECTIONS ══════════ */
-        .section {
-            padding: 80px 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
+        .section { padding: 80px 60px; max-width: 1400px; margin: 0 auto; }
         .section-head { text-align: center; margin-bottom: 56px; }
+        .section-eyebrow { font-size: 9px; letter-spacing: 0.52em; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 14px; }
+        .section-title { font-size: 38px; font-weight: 600; color: var(--ivory); letter-spacing: 0.04em; margin-bottom: 12px; }
+        .section-rule { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 14px; opacity: 0.5; }
+        .section-sub { font-size: 16px; font-style: italic; color: var(--mist); font-weight: 300; }
 
-        .section-eyebrow {
-            font-size: 9px;
-            letter-spacing: 0.52em;
-            color: var(--gold-dim);
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .section-title {
-            font-size: 38px;
-            font-weight: 600;
-            color: var(--ivory);
-            letter-spacing: 0.04em;
-            margin-bottom: 12px;
-        }
-
-        .section-rule {
-            width: 60px;
-            height: 1px;
-            background: var(--gold);
-            margin: 0 auto 14px;
-            opacity: 0.5;
-        }
-
-        .section-sub {
-            font-size: 16px;
-            font-style: italic;
-            color: var(--mist);
-            font-weight: 300;
-        }
-
-        /* ══════════ COMING SOON ══════════ */
-        .coming-soon-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(10,8,6,0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .coming-soon-badge {
-            font-size: 10px;
-            letter-spacing: 0.42em;
-            color: var(--gold);
-            border: 1px solid rgba(201,168,76,0.6);
-            padding: 8px 18px;
-            text-transform: uppercase;
-            background: rgba(10,8,6,0.85);
-            font-family: var(--font);
-        }
-
-        .product-card.coming-soon { cursor: default; pointer-events: none; opacity: 1; }
-        .product-card.coming-soon:hover { transform: none !important; box-shadow: none !important; border-color: var(--border) !important; }
-
-        .btn-buy.disabled { background: var(--gold-dk); cursor: default; opacity: 0.65; }
-
-        /* ══════════ PRODUCT CARDS ══════════ */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-        }
+        /* ══════════ PRODUCTS GRID ══════════ */
+        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 
         .product-card {
-            background: var(--bg2);
-            border: 1px solid var(--border);
+            background: var(--bg2); border: 1px solid var(--border);
             transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            position: relative;
-            overflow: hidden;
+            text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden;
         }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .product-card:hover {
-            border-color: rgba(201,168,76,0.40);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 4px 20px rgba(139,105,20,0.12);
-        }
-
+        .product-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
+        .product-card:hover { border-color: rgba(201,168,76,0.40); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 4px 20px rgba(139,105,20,0.12); }
         .product-card:hover::before { opacity: 1; }
 
-        .product-image {
-            aspect-ratio: 3/4;
-            background: var(--bg3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--border);
-            padding: 28px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            max-width: 100%;
-            height: auto;
-            max-height: 100vh;
-            box-shadow: -3px 0 10px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.7);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .product-card:hover .product-image img {
-            transform: rotate(-2deg) scale(1.04);
-            box-shadow: -4px 0 16px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.8);
-        }
+        .product-image { aspect-ratio: 3/4; background: var(--bg3); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); padding: 28px 24px; position: relative; overflow: hidden; }
+        .product-image img { max-width: 100%; height: auto; box-shadow: -3px 0 10px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.7); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .product-card:hover .product-image img { transform: rotate(-2deg) scale(1.04); box-shadow: -4px 0 16px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.8); }
 
         .product-info { padding: 24px 26px 26px; }
-
-        .product-badge {
-            display: inline-block;
-            font-size: 8px;
-            letter-spacing: 0.38em;
-            color: var(--gold);
-            text-transform: uppercase;
-            border: 1px solid rgba(201,168,76,0.28);
-            padding: 4px 10px;
-            margin-bottom: 12px;
-        }
-
-        .product-name {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--ivory);
-            margin-bottom: 6px;
-            line-height: 1.2;
-        }
-
+        .product-badge { display: inline-block; font-size: 8px; letter-spacing: 0.38em; color: var(--gold); text-transform: uppercase; border: 1px solid rgba(201,168,76,0.28); padding: 4px 10px; margin-bottom: 12px; }
+        .product-name { font-size: 22px; font-weight: 600; color: var(--ivory); margin-bottom: 6px; line-height: 1.2; }
         .product-author { font-size: 13px; font-style: italic; color: var(--mist); margin-bottom: 12px; }
-
-        .product-desc {
-            font-size: 14px;
-            color: rgba(158,138,106,0.80);
-            line-height: 1.65;
-            margin-bottom: 18px;
-            font-weight: 300;
-        }
-
+        .product-desc { font-size: 14px; color: rgba(158,138,106,0.80); line-height: 1.65; margin-bottom: 18px; font-weight: 300; }
         .product-footer { display: flex; align-items: center; justify-content: space-between; }
-
         .product-price { font-size: 26px; font-weight: 600; color: var(--gold); }
+        .product-price span { font-size: 13px; color: var(--mist); font-weight: 300; font-style: italic; margin-left: 4px; }
 
-        .product-price span {
-            font-size: 13px;
-            color: var(--mist);
-            font-weight: 300;
-            font-style: italic;
-            margin-left: 4px;
-        }
-
-        .btn-buy {
-            font-size: 10px;
-            letter-spacing: 0.32em;
-            text-transform: uppercase;
-            color: var(--bg);
-            background: var(--gold);
-            padding: 10px 20px;
-            font-weight: 700;
-            font-family: var(--font);
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
+        .btn-buy { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 10px 20px; font-weight: 700; font-family: var(--font); border: none; cursor: pointer; transition: background 0.3s; text-decoration: none; display: inline-block; }
         .btn-buy:hover { background: var(--gold2); }
+        .btn-buy.disabled { background: var(--gold-dk); cursor: default; opacity: 0.65; pointer-events: none; }
 
-        /* ══════════ QUOTE BAND ══════════ */
-        .quote-band {
-            background: var(--bg2);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 64px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote-band::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(139,105,20,0.08) 0%, transparent 65%);
-        }
-
-        .quote-band blockquote {
-            position: relative;
-            max-width: 760px;
-            margin: 0 auto;
-            font-size: clamp(22px, 3vw, 30px);
-            font-style: italic;
-            font-weight: 300;
-            color: var(--ivory);
-            line-height: 1.55;
-            margin-bottom: 20px;
-        }
-
-        .quote-band blockquote::before {
-            content: '\201C';
-            font-size: 80px;
-            color: var(--gold-dk);
-            position: absolute;
-            top: -20px; left: -30px;
-            font-style: normal;
-            line-height: 1;
-        }
-
-        .quote-attribution {
-            font-size: 11px;
-            letter-spacing: 0.38em;
-            color: var(--gold-dim);
-            text-transform: uppercase;
-        }
-
-        /* ══════════ ABOUT PRESS ══════════ */
-        .about-press-section { max-width: 680px; margin: 0 auto; text-align: center; }
-
-        .about-press-section p {
-            font-size: 17px;
-            font-weight: 300;
-            line-height: 1.80;
-            color: rgba(158,138,106,0.85);
-            margin-bottom: 18px;
-        }
-
-        .press-manifesto {
-            font-size: 15px;
-            font-style: italic;
-            color: var(--gold);
-            line-height: 1.65;
-            margin-top: 32px;
-        }
-
-        /* ══════════ FOOTER ══════════ */
-        footer {
-            background: #060504;
-            border-top: 1px solid var(--border);
-            padding: 56px 60px 36px;
-        }
-
-        .footer-inner { max-width: 1400px; margin: 0 auto; }
-
-        .footer-top {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            padding-bottom: 44px;
-            border-bottom: 1px solid rgba(201,168,76,0.10);
-            margin-bottom: 28px;
-        }
-
-        .footer-brand .logo-name { font-size: 16px; margin-bottom: 4px; }
-        .footer-brand .logo-sub { font-size: 9px; }
-
-        .footer-tagline {
-            font-size: 14px;
-            font-style: italic;
-            color: rgba(139,105,20,0.65);
-            margin-top: 16px;
-            line-height: 1.6;
-            max-width: 280px;
-        }
-
-        .footer-col h4 {
-            font-size: 9px;
-            letter-spacing: 0.42em;
-            color: var(--gold-dim);
-            text-transform: uppercase;
-            margin-bottom: 18px;
-            font-weight: 400;
-        }
-
-        .footer-col a {
-            display: block;
-            font-size: 14px;
-            color: rgba(158,138,106,0.65);
-            text-decoration: none;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover { color: var(--gold); }
-
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
-
-        .footer-copy { font-size: 11px; color: rgba(139,105,20,0.40); letter-spacing: 0.18em; }
-        .footer-quote { font-size: 10px; color: rgba(139,105,20,0.30); letter-spacing: 0.22em; font-style: italic; }
-
-        /* ══════════ HERO CARD (Ghost in the Machine) ══════════ */
+        /* ══════════ HERO CARD — Ghost in the Machine ══════════ */
         .hero-card {
             grid-column: 1 / -1;
             display: flex;
             flex-direction: row;
-            border: 1px solid rgba(201,168,76,0.45);
+            border: 1px solid rgba(201,168,76,0.38);
             background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
             position: relative;
             overflow: hidden;
-            min-height: 480px;
-            text-decoration: none;
-            color: inherit;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            min-height: 460px;
+            cursor: default;
         }
-
         .hero-card::before {
             content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.7), transparent);
-        }
-
-        .hero-card:hover {
-            border-color: rgba(201,168,76,0.70);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 4px 20px rgba(139,105,20,0.15);
+            position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent);
         }
 
         .hero-card-image {
-            width: 300px;
-            min-width: 300px;
-            flex-shrink: 0;
+            width: 280px; min-width: 280px; flex-shrink: 0;
             background: #0e0b07;
-            border-right: 1px solid rgba(201,168,76,0.18);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 28px 22px;
-            overflow: hidden;
+            border-right: 1px solid rgba(201,168,76,0.15);
+            display: flex; align-items: center; justify-content: center;
+            padding: 28px 22px; overflow: hidden;
+        }
+        .hero-card-image img { width: 100%; height: auto; display: block; box-shadow: -3px 0 10px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.7); }
+
+        .hero-card-info { flex: 1; padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; }
+
+        .coming-badge {
+            display: inline-block; font-size: 9px; letter-spacing: 0.38em;
+            color: var(--mist); text-transform: uppercase;
+            border: 1px solid rgba(201,168,76,0.22);
+            background: rgba(201,168,76,0.06);
+            padding: 5px 12px; margin-bottom: 16px;
         }
 
-        .hero-card-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            box-shadow: -3px 0 10px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.7);
-            transition: transform 0.4s ease;
-        }
+        .new-badge { background: rgba(201,168,76,0.12) !important; border: 1px solid rgba(201,168,76,0.38) !important; color: var(--gold2) !important; }
 
-        .hero-card:hover .hero-card-image img {
-            transform: rotate(-1.5deg) scale(1.03);
-        }
+        /* ══════════ QUOTE BAND ══════════ */
+        .quote-band { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 60px; text-align: center; position: relative; overflow: hidden; }
+        .quote-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(139,105,20,0.08) 0%, transparent 65%); }
+        .quote-band blockquote { position: relative; max-width: 760px; margin: 0 auto; font-size: clamp(22px, 3vw, 30px); font-style: italic; font-weight: 300; color: var(--ivory); line-height: 1.55; margin-bottom: 20px; }
+        .quote-band blockquote::before { content: '\201C'; font-size: 80px; color: var(--gold-dk); position: absolute; top: -20px; left: -30px; font-style: normal; line-height: 1; }
+        .quote-attribution { font-size: 11px; letter-spacing: 0.38em; color: var(--gold-dim); text-transform: uppercase; }
 
-        .hero-card-info {
-            flex: 1;
-            padding: 48px 56px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+        /* ══════════ ABOUT ══════════ */
+        .about-press-section { max-width: 680px; margin: 0 auto; text-align: center; }
+        .about-press-section p { font-size: 17px; font-weight: 300; line-height: 1.80; color: rgba(158,138,106,0.85); margin-bottom: 18px; }
+        .press-manifesto { font-size: 15px; font-style: italic; color: var(--gold); line-height: 1.65; margin-top: 32px; }
 
-        @media (max-width: 700px) {
-            .hero-card { flex-direction: column; }
-            .hero-card-image {
-                width: 100%;
-                min-width: unset;
-                border-right: none;
-                border-bottom: 1px solid rgba(201,168,76,0.18);
-                aspect-ratio: 3/4;
-            }
-            .hero-card-info { padding: 28px 24px; }
-        }
-
-        /* ══════════ FEATURED CARD (other) ══════════ */
-        .product-card.featured {
-            border-color: rgba(201,168,76,0.45);
-            background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card.featured::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
-        }
-
-        .new-badge {
-            background: rgba(201,168,76,0.12) !important;
-            border: 1px solid rgba(201,168,76,0.38) !important;
-            color: var(--gold2) !important;
-        }
-
-        .live-badge {
-            background: rgba(201,168,76,0.15) !important;
-            border: 1px solid rgba(201,168,76,0.55) !important;
-            color: var(--gold2) !important;
-        }
-
-        .btn-buy:not(.disabled) {
-            background: var(--gold);
-            color: var(--bg);
-            padding: 10px 22px;
-            font-size: 11px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-decoration: none;
-        }
-
-        .btn-buy:not(.disabled):hover { background: var(--gold2); }
+        /* ══════════ FOOTER ══════════ */
+        footer { background: #060504; border-top: 1px solid var(--border); padding: 56px 60px 36px; }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding-bottom: 44px; border-bottom: 1px solid rgba(201,168,76,0.10); margin-bottom: 28px; }
+        .footer-brand .logo-name { font-size: 16px; margin-bottom: 4px; }
+        .footer-brand .logo-sub { font-size: 9px; }
+        .footer-tagline { font-size: 14px; font-style: italic; color: rgba(139,105,20,0.65); margin-top: 16px; line-height: 1.6; max-width: 280px; }
+        .footer-col h4 { font-size: 9px; letter-spacing: 0.42em; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 18px; font-weight: 400; }
+        .footer-col a { display: block; font-size: 14px; color: rgba(158,138,106,0.65); text-decoration: none; margin-bottom: 10px; transition: color 0.3s; }
+        .footer-col a:hover { color: var(--gold); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-copy { font-size: 11px; color: rgba(139,105,20,0.40); letter-spacing: 0.18em; }
+        .footer-quote { font-size: 10px; color: rgba(139,105,20,0.30); letter-spacing: 0.22em; font-style: italic; }
 
         /* ══════════ RESPONSIVE ══════════ */
-        @media (max-width: 1000px) {
-            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        @media (max-width: 1100px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1000px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
+        @media (max-width: 700px) {
+            .hero-card { flex-direction: column; }
+            .hero-card-image { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); aspect-ratio: 3/4; }
+            .hero-card-info { padding: 28px 24px; }
         }
-
         @media (max-width: 600px) {
             header { padding: 0 24px; }
             .section { padding: 60px 24px; }
@@ -755,12 +220,10 @@
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
 <div class="announcement">
-    New release &nbsp;·&nbsp; Ghost in the Machine, Soul in the Body — available now &nbsp;·&nbsp; Free worldwide digital delivery
+    Coming soon &nbsp;·&nbsp; Ghost in the Machine, Soul in the Body &nbsp;·&nbsp; Secret Whisper Press · Est. 2026
 </div>
 
-<!-- HEADER -->
 <header>
     <div class="header-inner">
         <a href="#" class="header-logo">
@@ -789,7 +252,6 @@
     </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
@@ -815,29 +277,20 @@
     </div>
 </section>
 
-<!-- DIVIDER -->
 <div class="section-divider">
     <div class="sd-line"></div>
-    <div class="sd-ornament">
-        <div class="sd-dot"></div>
-        <div class="sd-diamond"></div>
-        <div class="sd-dot"></div>
-    </div>
+    <div class="sd-ornament"><div class="sd-dot"></div><div class="sd-diamond"></div><div class="sd-dot"></div></div>
     <div class="sd-line"></div>
 </div>
 
-<!-- QUOTE BAND -->
 <div class="quote-band">
-    <blockquote>
-        We believe the most important work is cultivated — quietly, deliberately, from within.
-    </blockquote>
+    <blockquote>We believe the most important work is cultivated — quietly, deliberately, from within.</blockquote>
     <div class="quote-attribution">— Secret Whisper Press Manifesto</div>
 </div>
 
-<!-- BOOKS SECTION -->
 <div class="section" id="books">
     <div class="section-head">
-        <div class="section-eyebrow">Available now</div>
+        <div class="section-eyebrow">Our catalogue</div>
         <h2 class="section-title">Our Collection</h2>
         <div class="section-rule"></div>
         <p class="section-sub">Digital editions — instant delivery worldwide</p>
@@ -845,13 +298,13 @@
 
     <div class="products-grid">
 
-        <!-- ★ GHOST IN THE MACHINE — LIVE HERO CARD ★ -->
-        <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank" class="product-card hero-card">
+        <!-- ★ GHOST IN THE MACHINE — COMING SOON HERO ★ -->
+        <div class="hero-card">
             <div class="hero-card-image">
                 <img src="ghost-in-the-machine-cover.png" alt="Ghost in the Machine, Soul in the Body — Mehdi Zaki">
             </div>
             <div class="hero-card-info">
-                <div class="product-badge live-badge">Coming soon · eBook · PDF</div>
+                <div class="coming-badge">Coming Soon · eBook · PDF</div>
                 <div class="product-name" style="font-size:34px; line-height:1.15; margin-bottom:10px;">Ghost in the Machine,<br>Soul in the Body</div>
                 <div class="product-author" style="font-size:15px; margin-bottom:18px;">by Mehdi Zaki</div>
                 <p class="product-desc" style="font-size:16px; max-width:540px; margin-bottom:32px;">
@@ -859,10 +312,10 @@
                 </p>
                 <div class="product-footer">
                     <div class="product-price" style="font-size:34px;">$24 <span>eBook</span></div>
-                    <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank" class="btn-buy" style="font-size:12px; padding:14px 34px;">Get the Book</a>
+                    <span class="btn-buy disabled" style="font-size:12px; padding:14px 34px;">Coming Soon</span>
                 </div>
             </div>
-        </a>
+        </div>
 
         <!-- The Elegance of Being -->
         <a href="#" class="product-card">
@@ -873,9 +326,7 @@
                 <div class="product-badge new-badge">New Release · eBook · PDF</div>
                 <div class="product-name">The Elegance of Being</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
-                    A Trilogy on the Sacred Architecture of Inner Beauty. Three books that move from becoming, through awakening, to the quiet art of living it. For those who have always known that depth is more beautiful than shine.
-                </p>
+                <p class="product-desc">A Trilogy on the Sacred Architecture of Inner Beauty. Three books that move from becoming, through awakening, to the quiet art of living it.</p>
                 <div class="product-footer">
                     <div class="product-price">$18.00 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -886,15 +337,13 @@
         <!-- The Beauty Within -->
         <a href="#" class="product-card">
             <div class="product-image">
-                <img src="the-beauty-within-cover.jpg" alt="The Beauty Within — The Sacred Frequency">
+                <img src="the-beauty-within-cover.jpg" alt="The Beauty Within">
             </div>
             <div class="product-info">
                 <div class="product-badge">eBook · PDF</div>
                 <div class="product-name">The Beauty Within</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
-                    The Sacred Frequency. The slow, sacred work of tending the inner garden — until your very presence becomes an invitation, and the world leans in to meet you.
-                </p>
+                <p class="product-desc">The Sacred Frequency. The slow, sacred work of tending the inner garden — until your very presence becomes an invitation, and the world leans in to meet you.</p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -911,9 +360,7 @@
                 <div class="product-badge">eBook · PDF</div>
                 <div class="product-name">Feel the Horizon Within</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
-                    Redefining Feminine Radiant Expansiveness. A poetic, soul-deep guide to reclaiming your magnetism, intuition, and sovereign power from within.
-                </p>
+                <p class="product-desc">Redefining Feminine Radiant Expansiveness. A poetic, soul-deep guide to reclaiming your magnetism, intuition, and sovereign power from within.</p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -930,9 +377,7 @@
                 <div class="product-badge">eBook · PDF</div>
                 <div class="product-name">The Quiet Architects</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
-                    Rethinking Prosperity in the Connected Age. The complete 80-page philosophical framework for building wealth that is holistic, sustainable, and genuinely yours.
-                </p>
+                <p class="product-desc">Rethinking Prosperity in the Connected Age. The complete philosophical framework for building wealth that is holistic, sustainable, and genuinely yours.</p>
                 <div class="product-footer">
                     <div class="product-price">$21 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -949,9 +394,7 @@
                 <div class="product-badge">eBook · PDF</div>
                 <div class="product-name">Before You Were Needed</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
-                    A meditation on purpose, timing, and the invisible architecture that shapes our readiness for contribution. For the person who arrived before the world was ready.
-                </p>
+                <p class="product-desc">A meditation on purpose, timing, and the invisible architecture that shapes our readiness for contribution. For the person who arrived before the world was ready.</p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -968,9 +411,7 @@
                 <div class="product-badge">eBook · PDF</div>
                 <div class="product-name">The Invisible ATM</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
-                    While the masses remain trapped in a system designed to extract their time, a new generation has realized the Matrix left a backdoor. The Invisible ATM is the blueprint for walking through it.
-                </p>
+                <p class="product-desc">While the masses remain trapped in a system designed to extract their time, a new generation has realized the Matrix left a backdoor. The blueprint for walking through it.</p>
                 <div class="product-footer">
                     <div class="product-price">$27 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -981,18 +422,12 @@
     </div>
 </div>
 
-<!-- DIVIDER -->
 <div class="section-divider">
     <div class="sd-line"></div>
-    <div class="sd-ornament">
-        <div class="sd-dot"></div>
-        <div class="sd-diamond"></div>
-        <div class="sd-dot"></div>
-    </div>
+    <div class="sd-ornament"><div class="sd-dot"></div><div class="sd-diamond"></div><div class="sd-dot"></div></div>
     <div class="sd-line"></div>
 </div>
 
-<!-- ABOUT PRESS -->
 <div class="section" id="about">
     <div class="section-head">
         <div class="section-eyebrow">The press</div>
@@ -1000,19 +435,12 @@
         <div class="section-rule"></div>
     </div>
     <div class="about-press-section">
-        <p>
-            Secret Whisper Press was founded on a single conviction: that the most consequential books are not the loudest ones.
-        </p>
-        <p>
-            In an age of noise, acceleration, and information without wisdom, we publish for the reader who has grown tired of being told what to do — and is ready, instead, to understand who they are. Our books do not offer shortcuts. They offer something rarer: a reorientation. A return to the self as the source of all genuine prosperity, creativity, and change.
-        </p>
-        <p class="press-manifesto">
-            We believe the most important work is cultivated — quietly, deliberately, from within.
-        </p>
+        <p>Secret Whisper Press was founded on a single conviction: that the most consequential books are not the loudest ones.</p>
+        <p>In an age of noise, acceleration, and information without wisdom, we publish for the reader who has grown tired of being told what to do — and is ready, instead, to understand who they are. Our books do not offer shortcuts. They offer something rarer: a reorientation. A return to the self as the source of all genuine prosperity, creativity, and change.</p>
+        <p class="press-manifesto">We believe the most important work is cultivated — quietly, deliberately, from within.</p>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer id="contact">
     <div class="footer-inner">
         <div class="footer-top">
@@ -1023,24 +451,29 @@
             </div>
             <div class="footer-col">
                 <h4>Store</h4>
-                <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank">Ghost in the Machine ✦ Live</a>
+                <a href="#">Ghost in the Machine ✦ Soon</a>
                 <a href="https://secretwhisperpress.gumroad.com" target="_blank">Browse All Books</a>
                 <a href="#">The Elegance of Being</a>
-                <a href="https://secretwhisperpress.gumroad.com/l/the-beauty-within" target="_blank">The Beauty Within</a>
-                <a href="https://secretwhisperpress.gumroad.com/l/feel-the-horizon-within" target="_blank">Feel the Horizon Within</a>
-                <a href="https://secretwhisperpress.gumroad.com/l/quiet-architects" target="_blank">The Quiet Architects</a>
-                <a href="https://secretwhisperpress.gumroad.com/l/before-needed" target="_blank">Before You Were Needed</a>
+                <a href="#">The Beauty Within</a>
+                <a href="#">Feel the Horizon Within</a>
+                <a href="#">The Quiet Architects</a>
+                <a href="#">Before You Were Needed</a>
                 <a href="https://secretwhisperpress.gumroad.com/l/invisible-atm" target="_blank">The Invisible ATM</a>
             </div>
             <div class="footer-col">
                 <h4>Press</h4>
                 <a href="#about">About</a>
                 <a href="https://yoursubstack.substack.com" target="_blank">Journal</a>
-                <a href="/cdn-cgi/l/email-protection#3d55585151527d4e585e4f58494a55544e4d584f4d4f584e4e135e5250">Contact</a>
+                <a href="mailto:hello@secretwhisperpress.com">Contact</a>
                 <a href="#">Rights &amp; Permissions</a>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-copy">© 2026 Secret Whisper Press · All rights reserved</div>
             <div class="footer-quote">The soil is the self. Tend to that first.</div>
+        </div>
+    </div>
+</footer>
 
+</body>
+</html>
