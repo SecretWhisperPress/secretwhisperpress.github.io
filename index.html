@@ -619,15 +619,85 @@
         .footer-copy { font-size: 11px; color: rgba(139,105,20,0.40); letter-spacing: 0.18em; }
         .footer-quote { font-size: 10px; color: rgba(139,105,20,0.30); letter-spacing: 0.22em; font-style: italic; }
 
-        /* ══════════ FEATURED CARD ══════════ */
+        /* ══════════ HERO CARD (Ghost in the Machine) ══════════ */
+        .hero-card {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: row;
+            border: 1px solid rgba(201,168,76,0.45);
+            background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 480px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.7), transparent);
+        }
+
+        .hero-card:hover {
+            border-color: rgba(201,168,76,0.70);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 4px 20px rgba(139,105,20,0.15);
+        }
+
+        .hero-card-image {
+            width: 300px;
+            min-width: 300px;
+            flex-shrink: 0;
+            background: #0e0b07;
+            border-right: 1px solid rgba(201,168,76,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 22px;
+            overflow: hidden;
+        }
+
+        .hero-card-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: -3px 0 10px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.7);
+            transition: transform 0.4s ease;
+        }
+
+        .hero-card:hover .hero-card-image img {
+            transform: rotate(-1.5deg) scale(1.03);
+        }
+
+        .hero-card-info {
+            flex: 1;
+            padding: 48px 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 700px) {
+            .hero-card { flex-direction: column; }
+            .hero-card-image {
+                width: 100%;
+                min-width: unset;
+                border-right: none;
+                border-bottom: 1px solid rgba(201,168,76,0.18);
+                aspect-ratio: 3/4;
+            }
+            .hero-card-info { padding: 28px 24px; }
+        }
+
+        /* ══════════ FEATURED CARD (other) ══════════ */
         .product-card.featured {
             border-color: rgba(201,168,76,0.45);
             background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
             position: relative;
             overflow: hidden;
-            grid-column: 1 / -1;
-            display: flex;
-            flex-direction: row;
         }
 
         .product-card.featured::after {
@@ -636,55 +706,6 @@
             top: 0; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
-        }
-
-        .product-card.featured .product-image {
-            width: 320px;
-            min-width: 320px;
-            aspect-ratio: unset;
-            border-bottom: none;
-            border-right: 1px solid rgba(201,168,76,0.18);
-        }
-
-        .product-card.featured .product-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 48px;
-        }
-
-        .product-card.featured .product-name {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .product-card.featured .product-desc {
-            font-size: 16px;
-            max-width: 560px;
-            margin-bottom: 28px;
-        }
-
-        .product-card.featured .product-price {
-            font-size: 32px;
-        }
-
-        .product-card.featured .btn-buy {
-            font-size: 12px;
-            padding: 14px 32px;
-        }
-
-        @media (max-width: 700px) {
-            .product-card.featured {
-                flex-direction: column;
-            }
-            .product-card.featured .product-image {
-                width: 100%;
-                min-width: unset;
-                aspect-ratio: 3/4;
-                border-right: none;
-                border-bottom: 1px solid rgba(201,168,76,0.18);
-            }
         }
 
         .new-badge {
@@ -824,21 +845,21 @@
 
     <div class="products-grid">
 
-        <!-- ★ GHOST IN THE MACHINE — LIVE ★ -->
-        <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank" class="product-card featured">
-            <div class="product-image">
+        <!-- ★ GHOST IN THE MACHINE — LIVE HERO CARD ★ -->
+        <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank" class="product-card hero-card">
+            <div class="hero-card-image">
                 <img src="ghost-in-the-machine-cover.png" alt="Ghost in the Machine, Soul in the Body — Mehdi Zaki">
             </div>
-            <div class="product-info">
-                <div class="product-badge live-badge">Coming Soon · eBook · PDF</div>
-                <div class="product-name">Ghost in the Machine,<br>Soul in the Body</div>
-                <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">
+            <div class="hero-card-info">
+                <div class="product-badge live-badge">Available Now · eBook · PDF</div>
+                <div class="product-name" style="font-size:34px; line-height:1.15; margin-bottom:10px;">Ghost in the Machine,<br>Soul in the Body</div>
+                <div class="product-author" style="font-size:15px; margin-bottom:18px;">by Mehdi Zaki</div>
+                <p class="product-desc" style="font-size:16px; max-width:540px; margin-bottom:32px;">
                     A manual of return — for those who sense that something essential is being slowly, quietly extracted. On the war of algorithms, the colonization of the frontal lobe, and the ancient art of escape.
                 </p>
                 <div class="product-footer">
-                    <div class="product-price">$24 <span>eBook</span></div>
-                    <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank" class="btn-buy">Get the Book</a>
+                    <div class="product-price" style="font-size:34px;">$24 <span>eBook</span></div>
+                    <a href="https://secretwhisperpress.gumroad.com/l/ghost-in-the-machine" target="_blank" class="btn-buy" style="font-size:12px; padding:14px 34px;">Get the Book</a>
                 </div>
             </div>
         </a>
