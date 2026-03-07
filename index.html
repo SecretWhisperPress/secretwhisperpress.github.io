@@ -625,6 +625,9 @@
             background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
             position: relative;
             overflow: hidden;
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: row;
         }
 
         .product-card.featured::after {
@@ -633,6 +636,55 @@
             top: 0; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
+        }
+
+        .product-card.featured .product-image {
+            width: 320px;
+            min-width: 320px;
+            aspect-ratio: unset;
+            border-bottom: none;
+            border-right: 1px solid rgba(201,168,76,0.18);
+        }
+
+        .product-card.featured .product-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 48px;
+        }
+
+        .product-card.featured .product-name {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .product-card.featured .product-desc {
+            font-size: 16px;
+            max-width: 560px;
+            margin-bottom: 28px;
+        }
+
+        .product-card.featured .product-price {
+            font-size: 32px;
+        }
+
+        .product-card.featured .btn-buy {
+            font-size: 12px;
+            padding: 14px 32px;
+        }
+
+        @media (max-width: 700px) {
+            .product-card.featured {
+                flex-direction: column;
+            }
+            .product-card.featured .product-image {
+                width: 100%;
+                min-width: unset;
+                aspect-ratio: 3/4;
+                border-right: none;
+                border-bottom: 1px solid rgba(201,168,76,0.18);
+            }
         }
 
         .new-badge {
@@ -778,7 +830,7 @@
                 <img src="ghost-in-the-machine-cover.png" alt="Ghost in the Machine, Soul in the Body — Mehdi Zaki">
             </div>
             <div class="product-info">
-                <div class="product-badge live-badge">Available Now · eBook · PDF</div>
+                <div class="product-badge live-badge">Coming Soon · eBook · PDF</div>
                 <div class="product-name">Ghost in the Machine,<br>Soul in the Body</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">
@@ -792,7 +844,7 @@
         </a>
 
         <!-- The Elegance of Being -->
-        <a href="#" class="product-card featured">
+        <a href="#" class="product-card">
             <div class="product-image">
                 <img src="elegance-of-being-cover.png" alt="The Elegance of Being — A Trilogy by Mehdi Zaki">
             </div>
@@ -962,16 +1014,10 @@
                 <h4>Press</h4>
                 <a href="#about">About</a>
                 <a href="https://yoursubstack.substack.com" target="_blank">Journal</a>
-                <a href="mailto:hello@secretwhisperpress.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#3d55585151527d4e585e4f58494a55544e4d584f4d4f584e4e135e5250">Contact</a>
                 <a href="#">Rights &amp; Permissions</a>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-copy">© 2026 Secret Whisper Press · All rights reserved</div>
             <div class="footer-quote">The soil is the self. Tend to that first.</div>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
