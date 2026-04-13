@@ -103,7 +103,6 @@
         .section-rule { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 14px; opacity: 0.5; }
         .section-sub { font-size: 16px; font-style: italic; color: var(--mist); font-weight: 300; }
 
-        /* ══════════ PRODUCTS GRID ══════════ */
         .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 
         .product-card {
@@ -132,60 +131,98 @@
         .btn-buy:hover { background: var(--gold2); }
         .btn-buy.disabled { background: var(--gold-dk); cursor: default; opacity: 0.65; pointer-events: none; }
 
-        /* ══════════ HERO CARD — Ghost in the Machine ══════════ */
+        /* HERO CARD */
         .hero-card {
-            grid-column: 1 / -1;
-            display: flex;
-            flex-direction: row;
+            grid-column: 1 / -1; display: flex; flex-direction: row;
             border: 1px solid rgba(201,168,76,0.38);
             background: linear-gradient(135deg, #161209 0%, #1C1810 100%);
-            position: relative;
-            overflow: hidden;
-            min-height: 460px;
-            cursor: default;
+            position: relative; overflow: hidden; min-height: 460px; cursor: default;
         }
         .hero-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
             background: linear-gradient(90deg, transparent, rgba(201,168,76,0.45), transparent);
         }
-
         .hero-card-image {
             width: 280px; min-width: 280px; flex-shrink: 0;
-            background: #0e0b07;
-            border-right: 1px solid rgba(201,168,76,0.15);
+            background: #0e0b07; border-right: 1px solid rgba(201,168,76,0.15);
             display: flex; align-items: center; justify-content: center;
             padding: 28px 22px; overflow: hidden;
         }
         .hero-card-image img { width: 100%; height: auto; display: block; box-shadow: -3px 0 10px rgba(0,0,0,0.5), 0 8px 32px rgba(0,0,0,0.7); }
-
         .hero-card-info { flex: 1; padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; }
 
         .coming-badge {
-            display: inline-block;
-            width: fit-content;
-            font-size: 9px; letter-spacing: 0.38em;
-            color: var(--mist); text-transform: uppercase;
-            border: 1px solid rgba(201,168,76,0.22);
-            background: rgba(201,168,76,0.06);
-            padding: 5px 12px; margin-bottom: 16px;
+            display: inline-block; width: fit-content;
+            font-size: 9px; letter-spacing: 0.38em; color: var(--mist);
+            text-transform: uppercase; border: 1px solid rgba(201,168,76,0.22);
+            background: rgba(201,168,76,0.06); padding: 5px 12px; margin-bottom: 16px;
         }
-
         .new-badge { background: rgba(201,168,76,0.12) !important; border: 1px solid rgba(201,168,76,0.38) !important; color: var(--gold2) !important; }
 
-        /* ══════════ QUOTE BAND ══════════ */
+        /* INNER TEACHER CARD — featured coming soon */
+        .it-card {
+            grid-column: 1 / -1; display: flex; flex-direction: row;
+            border: 1px solid rgba(201,168,76,0.55);
+            background: linear-gradient(135deg, #0f0c07 0%, #1a1508 50%, #0f0c07 100%);
+            position: relative; overflow: hidden; min-height: 420px;
+        }
+        .it-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.65), rgba(232,196,108,0.4), rgba(201,168,76,0.65), transparent);
+        }
+        .it-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent);
+        }
+        .it-card-image {
+            width: 260px; min-width: 260px; flex-shrink: 0;
+            background: #050403; border-right: 1px solid rgba(201,168,76,0.20);
+            display: flex; align-items: center; justify-content: center;
+            padding: 24px 20px; overflow: hidden;
+        }
+        .it-card-image img { width: 100%; height: auto; display: block; box-shadow: 0 12px 48px rgba(0,0,0,0.9), 0 2px 8px rgba(139,105,20,0.2); }
+        .it-card-info { flex: 1; padding: 44px 52px; display: flex; flex-direction: column; justify-content: center; }
+        .it-eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 9px; letter-spacing: 0.45em; color: var(--gold);
+            text-transform: uppercase; margin-bottom: 18px;
+        }
+        .it-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); opacity: 0.5; }
+        .it-title { font-size: 36px; font-weight: 700; color: var(--ivory); line-height: 1.1; margin-bottom: 6px; letter-spacing: 0.02em; }
+        .it-subtitle { font-size: 15px; font-style: italic; color: var(--gold-dim); margin-bottom: 6px; }
+        .it-tagline { font-size: 13px; letter-spacing: 0.15em; color: rgba(139,105,20,0.55); margin-bottom: 20px; }
+        .it-author { font-size: 14px; font-style: italic; color: var(--mist); margin-bottom: 20px; }
+        .it-desc { font-size: 15px; color: rgba(158,138,106,0.80); line-height: 1.70; margin-bottom: 28px; font-weight: 300; max-width: 560px; }
+        .it-footer { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .it-price { font-size: 30px; font-weight: 600; color: var(--gold); }
+        .it-price span { font-size: 13px; color: var(--mist); font-weight: 300; font-style: italic; margin-left: 4px; }
+        .it-soon {
+            font-size: 9px; letter-spacing: 0.42em; text-transform: uppercase;
+            color: var(--gold); border: 1px solid rgba(201,168,76,0.40);
+            background: rgba(201,168,76,0.07); padding: 10px 22px;
+            font-family: var(--font); font-weight: 400;
+        }
+        .it-notify {
+            font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+            color: var(--mist); border: 1px solid rgba(158,138,106,0.25);
+            padding: 10px 22px; font-family: var(--font); background: transparent;
+            cursor: pointer; transition: border-color 0.3s, color 0.3s;
+        }
+        .it-notify:hover { border-color: var(--gold-dim); color: var(--gold-dim); }
+
+        /* QUOTE BAND */
         .quote-band { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 60px; text-align: center; position: relative; overflow: hidden; }
         .quote-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(139,105,20,0.08) 0%, transparent 65%); }
         .quote-band blockquote { position: relative; max-width: 760px; margin: 0 auto; font-size: clamp(22px, 3vw, 30px); font-style: italic; font-weight: 300; color: var(--ivory); line-height: 1.55; margin-bottom: 20px; }
         .quote-band blockquote::before { content: '\201C'; font-size: 80px; color: var(--gold-dk); position: absolute; top: -20px; left: -30px; font-style: normal; line-height: 1; }
         .quote-attribution { font-size: 11px; letter-spacing: 0.38em; color: var(--gold-dim); text-transform: uppercase; }
 
-        /* ══════════ ABOUT ══════════ */
+        /* ABOUT */
         .about-press-section { max-width: 680px; margin: 0 auto; text-align: center; }
         .about-press-section p { font-size: 17px; font-weight: 300; line-height: 1.80; color: rgba(158,138,106,0.85); margin-bottom: 18px; }
         .press-manifesto { font-size: 15px; font-style: italic; color: var(--gold); line-height: 1.65; margin-top: 32px; }
 
-        /* ══════════ FOOTER ══════════ */
+        /* FOOTER */
         footer { background: #060504; border-top: 1px solid var(--border); padding: 56px 60px 36px; }
         .footer-inner { max-width: 1400px; margin: 0 auto; }
         .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; padding-bottom: 44px; border-bottom: 1px solid rgba(201,168,76,0.10); margin-bottom: 28px; }
@@ -199,13 +236,13 @@
         .footer-copy { font-size: 11px; color: rgba(139,105,20,0.40); letter-spacing: 0.18em; }
         .footer-quote { font-size: 10px; color: rgba(139,105,20,0.30); letter-spacing: 0.22em; font-style: italic; }
 
-        /* ══════════ RESPONSIVE ══════════ */
+        /* RESPONSIVE */
         @media (max-width: 1100px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1000px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
         @media (max-width: 700px) {
-            .hero-card { flex-direction: column; }
-            .hero-card-image { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); aspect-ratio: 3/4; }
-            .hero-card-info { padding: 28px 24px; }
+            .hero-card, .it-card { flex-direction: column; }
+            .hero-card-image, .it-card-image { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); aspect-ratio: 3/4; }
+            .hero-card-info, .it-card-info { padding: 28px 24px; }
         }
         @media (max-width: 600px) {
             header { padding: 0 24px; }
@@ -223,7 +260,7 @@
 <body>
 
 <div class="announcement">
-    New Release &nbsp;·&nbsp; The Lanterns of Lost Hours — Now Available &nbsp;·&nbsp; Secret Whisper Press · Est. 2026
+    New Release &nbsp;&middot;&nbsp; The Lanterns of Lost Hours — Now Available &nbsp;&middot;&nbsp; Secret Whisper Press &middot; Est. 2026
 </div>
 
 <header>
@@ -258,7 +295,7 @@
     <div class="hero-bg"></div>
     <div class="hero-inner">
         <div class="hero-text">
-            <div class="hero-eyebrow">Secret Whisper Press · Est. 2026</div>
+            <div class="hero-eyebrow">Secret Whisper Press &middot; Est. 2026</div>
             <h1 class="hero-title">
                 <span class="gold-word">Books</span> for the<br>
                 <span class="gold-word">Quiet</span> Architects
@@ -306,17 +343,16 @@
                 <img src="ghost-in-the-machine-cover.png" alt="Ghost in the Machine, Soul in the Body — Mehdi Zaki">
             </div>
             <div class="hero-card-info">
-                <div class="coming-badge">Coming Soon · eBook · PDF</div>
+                <div class="coming-badge">Coming Soon &middot; eBook &middot; PDF</div>
                 <div class="product-name" style="font-size:34px; line-height:1.15; margin-bottom:10px;">Ghost in the Machine,<br>Soul in the Body</div>
                 <div class="product-author" style="font-size:15px; margin-bottom:18px;">by Mehdi Zaki</div>
                 <p class="product-desc" style="font-size:16px; max-width:540px; margin-bottom:32px;">
                     A coup is underway. The battlefield is the space between your eyes.
-No armies. No sirens. Just the luminous rectangle in your hand — and your hand, reaching for it again.
-The target was never your land. Never your labor.
-It is your attention. Your perception. Your sovereign ability to choose what is real and what is noise — and to know the difference.
-At stake is the one thing that cannot be recovered once surrendered: the inner territory where you decide what matters, and become, in the fullest sense, yourself.
-This is not a book about quitting your phone.
-It is a book about remembering who you were before the machines learned your name.
+                    No armies. No sirens. Just the luminous rectangle in your hand — and your hand, reaching for it again.
+                    The target was never your land. Never your labor.
+                    It is your attention. Your perception. Your sovereign ability to choose what is real and what is noise.
+                    This is not a book about quitting your phone.
+                    It is a book about remembering who you were before the machines learned your name.
                 </p>
                 <div class="product-footer">
                     <div class="product-price" style="font-size:34px;">$24 <span>eBook</span></div>
@@ -325,13 +361,40 @@ It is a book about remembering who you were before the machines learned your nam
             </div>
         </div>
 
-        <!-- ★ THE LANTERNS OF LOST HOURS — NEW RELEASE ★ -->
+        <!-- ★ THE INNER TEACHER — COMING SOON FEATURED ★ -->
+        <div class="it-card">
+            <div class="it-card-image">
+                <img src="the-inner-teacher-cover.jpg" alt="The Inner Teacher — Mehdi Zaki">
+            </div>
+            <div class="it-card-info">
+                <div class="it-eyebrow">Coming Soon &middot; Nine Books &middot; PDF &amp; EPUB</div>
+                <div class="it-title">The Inner Teacher</div>
+                <div class="it-subtitle">Before the algorithm, there was a voice</div>
+                <div class="it-tagline">The grid is not the ground.</div>
+                <div class="it-author">by Mehdi Zaki &nbsp;&middot;&nbsp; Secret Whisper Press</div>
+                <p class="it-desc">
+                    Before the algorithm learned your hesitations, there was a voice that knew you from the inside.
+                    It did not predict. It did not recommend. It whispered — and you listened.
+                    This is the Inner Teacher. And it has been waiting for you to remember.
+                    A nine-book journey through the quiet revolution of reclaiming it —
+                    part philosophical inquiry, part practical manual, part elegy for what we have lost.
+                    Not a book about resisting technology. A book about returning to yourself.
+                </p>
+                <div class="it-footer">
+                    <div class="it-price">$14.99 <span>eBook</span></div>
+                    <span class="it-soon">Coming Soon</span>
+                    <button class="it-notify" onclick="this.textContent='Noted — we will whisper when it arrives'; this.style.borderColor='rgba(201,168,76,0.4)'; this.style.color='var(--gold)';">Notify me</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE LANTERNS OF LOST HOURS -->
         <a href="https://secretwhisperpress.gumroad.com/l/the-lanterns-of-lost-hours" target="_blank" class="product-card" style="border-color: rgba(201,168,76,0.45);">
             <div class="product-image" style="background: #080604;">
                 <img src="The Lanterns of Lost Hours cover.jpg" alt="The Lanterns of Lost Hours — Mehdi Zaki">
             </div>
             <div class="product-info">
-                <div class="product-badge new-badge">New Release · Literary Fiction · eBook</div>
+                <div class="product-badge new-badge">New Release &middot; Literary Fiction &middot; eBook</div>
                 <div class="product-name">The Lanterns of Lost Hours</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">In a workshop in Ueno, Mei makes lanterns for those whose grief has no other shape. Each one holds what cannot be said. Each one asks only to carry the weight for a while.</p>
@@ -348,7 +411,7 @@ It is a book about remembering who you were before the machines learned your nam
                 <img src="elegance-of-being-cover.png" alt="The Elegance of Being — A Trilogy by Mehdi Zaki">
             </div>
             <div class="product-info">
-                <div class="product-badge new-badge">New Release · eBook · PDF</div>
+                <div class="product-badge new-badge">New Release &middot; eBook &middot; PDF</div>
                 <div class="product-name">The Elegance of Being</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">A Trilogy on the Sacred Architecture of Inner Beauty. Three books that move from becoming, through awakening, to the quiet art of living it.</p>
@@ -365,7 +428,7 @@ It is a book about remembering who you were before the machines learned your nam
                 <img src="the-beauty-within-cover.jpg" alt="The Beauty Within">
             </div>
             <div class="product-info">
-                <div class="product-badge">eBook · PDF</div>
+                <div class="product-badge">eBook &middot; PDF</div>
                 <div class="product-name">The Beauty Within</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">The Sacred Frequency. The slow, sacred work of tending the inner garden — until your very presence becomes an invitation, and the world leans in to meet you.</p>
@@ -382,7 +445,7 @@ It is a book about remembering who you were before the machines learned your nam
                 <img src="feel-the-horizon-within-cover v3.png" alt="Feel the Horizon Within">
             </div>
             <div class="product-info">
-                <div class="product-badge">eBook · PDF</div>
+                <div class="product-badge">eBook &middot; PDF</div>
                 <div class="product-name">Feel the Horizon Within</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">Redefining Feminine Radiant Expansiveness. A poetic, soul-deep guide to reclaiming your magnetism, intuition, and sovereign power from within.</p>
@@ -399,7 +462,7 @@ It is a book about remembering who you were before the machines learned your nam
                 <img src="the-quiet-architects-cover.jpg" alt="The Quiet Architects">
             </div>
             <div class="product-info">
-                <div class="product-badge">eBook · PDF</div>
+                <div class="product-badge">eBook &middot; PDF</div>
                 <div class="product-name">The Quiet Architects</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">Rethinking Prosperity in the Connected Age. The complete philosophical framework for building wealth that is holistic, sustainable, and genuinely yours.</p>
@@ -416,13 +479,10 @@ It is a book about remembering who you were before the machines learned your nam
                 <img src="before-needed-cover v2.jpg" alt="Before You Were Needed">
             </div>
             <div class="product-info">
-                <div class="product-badge">eBook · PDF</div>
+                <div class="product-badge">eBook &middot; PDF</div>
                 <div class="product-name">Before You Were Needed</div>
                 <div class="product-author">by Mehdi Zaki</div>
-                <p class="product-desc">Before You Were Needed — a book in four movements on stillness, 
-excavation, encounter, and surrender. For the person who senses 
-that the life they have been building is not quite the life that 
-was always theirs. Written by Mehdi Zaki · Secret Whisper Press.</p>
+                <p class="product-desc">A book in four movements on stillness, excavation, encounter, and surrender. For the person who senses that the life they have been building is not quite the life that was always theirs.</p>
                 <div class="product-footer">
                     <div class="product-price">$17.99 <span>eBook</span></div>
                     <span class="btn-buy disabled">Coming Soon</span>
@@ -436,7 +496,7 @@ was always theirs. Written by Mehdi Zaki · Secret Whisper Press.</p>
                 <img src="The_Invisible_ATM_Book_page_Cover_v3.png" alt="The Invisible ATM">
             </div>
             <div class="product-info">
-                <div class="product-badge">eBook · PDF</div>
+                <div class="product-badge">eBook &middot; PDF</div>
                 <div class="product-name">The Invisible ATM</div>
                 <div class="product-author">by Mehdi Zaki</div>
                 <p class="product-desc">While the masses remain trapped in a system designed to extract their time, a new generation has realized the Matrix left a backdoor. The blueprint for walking through it.</p>
@@ -479,8 +539,9 @@ was always theirs. Written by Mehdi Zaki · Secret Whisper Press.</p>
             </div>
             <div class="footer-col">
                 <h4>Store</h4>
-                <a href="https://secretwhisperpress.gumroad.com/l/the-lanterns-of-lost-hours" target="_blank">The Lanterns of Lost Hours ✦ New</a>
-                <a href="#">Ghost in the Machine ✦ Soon</a>
+                <a href="https://secretwhisperpress.gumroad.com/l/the-lanterns-of-lost-hours" target="_blank">The Lanterns of Lost Hours &#10022; New</a>
+                <a href="#">Ghost in the Machine &#10022; Soon</a>
+                <a href="#">The Inner Teacher &#10022; Soon</a>
                 <a href="https://secretwhisperpress.gumroad.com" target="_blank">Browse All Books</a>
                 <a href="#">The Elegance of Being</a>
                 <a href="#">The Beauty Within</a>
@@ -493,10 +554,16 @@ was always theirs. Written by Mehdi Zaki · Secret Whisper Press.</p>
                 <h4>Press</h4>
                 <a href="#about">About</a>
                 <a href="https://yoursubstack.substack.com" target="_blank">Journal</a>
-                <a href="/cdn-cgi/l/email-protection#68000d040407281b0d0b1a0d1c1f00011b180d1a181a0d1b1b460b0705">Contact</a>
+                <a href="mailto:hello@secretwhisperpress.com">Contact</a>
                 <a href="#">Rights &amp; Permissions</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-copy">© 2026 Secret Whisper Press · All rights reserved</div>
+            <div class="footer-copy">&copy; 2026 Secret Whisper Press &middot; All rights reserved</div>
             <div class="footer-quote">The soil is the self. Tend to that first.</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
