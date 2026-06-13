@@ -226,6 +226,43 @@
         .hero-card-info { flex: 1; padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; }
         .coming-badge { display: inline-block; width: fit-content; font-size: 9px; letter-spacing: 0.38em; color: var(--mist); text-transform: uppercase; border: 1px solid rgba(201,169,110,0.22); background: rgba(201,169,110,0.06); padding: 5px 12px; margin-bottom: 16px; }
 
+        /* ── MIDNIGHT, AGAIN. — NOIR FEATURE ── */
+        .ma-hero {
+            grid-column: 1 / -1;
+            display: flex; flex-direction: row;
+            border: 1px solid rgba(201,169,110,0.45);
+            background: linear-gradient(135deg, #070707 0%, #101010 55%, #0a0a0a 100%);
+            position: relative; overflow: hidden; min-height: 460px;
+            text-decoration: none; color: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .ma-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(220,220,220,0.35), rgba(201,169,110,0.45), rgba(220,220,220,0.35), transparent);
+        }
+        .ma-hero:hover { border-color: rgba(201,169,110,0.75); box-shadow: 0 24px 80px rgba(0,0,0,0.8), 0 4px 24px rgba(160,160,160,0.10); }
+        .ma-image {
+            width: 300px; min-width: 300px; flex-shrink: 0;
+            background: #030303;
+            border-right: 1px solid rgba(201,169,110,0.15);
+            display: flex; align-items: center; justify-content: center;
+            padding: 30px 26px; overflow: hidden;
+        }
+        .ma-image img {
+            width: 100%; height: auto; display: block;
+            box-shadow: 0 16px 64px rgba(0,0,0,0.95), 0 2px 10px rgba(180,180,180,0.10);
+            transition: transform 0.4s ease;
+        }
+        .ma-hero:hover .ma-image img { transform: scale(1.03); }
+        .ma-info { flex: 1; padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; }
+        .ma-subtitle { font-size: 17px; font-style: italic; color: #C9C9C9; margin-bottom: 6px; letter-spacing: 0.04em; }
+        .ma-quote { font-size: 14px; font-style: italic; color: rgba(190,190,190,0.55); margin-top: 22px; letter-spacing: 0.03em; }
+        @media (max-width: 900px) {
+            .ma-hero { flex-direction: column; }
+            .ma-image { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid rgba(201,169,110,0.15); max-height: 420px; }
+            .ma-info { padding: 32px 28px; }
+        }
+
         /* ── ABOUT ── */
         .about-press-section { max-width: 680px; margin: 0 auto; text-align: center; }
         .about-press-section p { font-size: 17px; font-weight: 300; line-height: 1.80; color: rgba(158,138,106,0.85); margin-bottom: 18px; }
@@ -267,7 +304,7 @@
 <body>
 
 <div class="announcement">
-    Coming Soon &nbsp;&middot;&nbsp; The Twilight Thread — Notify Me Below &nbsp;&middot;&nbsp; Secret Whisper Press &middot; Est. 2026
+    Coming Soon &nbsp;&middot;&nbsp; Midnight, Again. &amp; The Twilight Thread &nbsp;&middot;&nbsp; Secret Whisper Press &middot; Est. 2026
 </div>
 
 <header>
@@ -343,6 +380,36 @@
     </div>
 
     <div class="products-grid">
+
+        <!-- ★ MIDNIGHT, AGAIN. — COMING SOON FEATURE ★ -->
+        <a href="#notify" class="ma-hero">
+            <div class="ma-image">
+                <img src="Midnight_Again_Cover.png" alt="Midnight, Again. — The Hour That Listens Back — Mehdi Zaki">
+            </div>
+            <div class="ma-info">
+                <div class="tt-new">&#10022; Coming Soon &middot; Literary Romance &middot; Novella &middot; eBook &middot; PDF</div>
+                <div class="tt-title">Midnight, Again.</div>
+                <div class="ma-subtitle">The Hour That Listens Back.</div>
+                <div class="tt-author">by Mehdi Zaki &nbsp;&middot;&nbsp; Secret Whisper Press</div>
+                <p class="tt-desc">
+                    There is an hour that appears on no clock. It lives between the last song and the first bird &mdash;
+                    the hour when the iron you&rsquo;ve spent a lifetime welding to your ribs finally loses its temper.
+                    <em>This is a love story for the people who left first.</em>
+                </p>
+                <p class="tt-desc">
+                    A choreographer of clean exits. An architect of distance. One ballroom that collects returns &mdash;
+                    and every road out of the room becomes a loop. A novella distilled to its essence:
+                    no filler, no scaffolding, only the ache. Readable in one midnight sitting.
+                </p>
+                <div class="tt-footer">
+                    <div>
+                        <div class="tt-price">$9.99 <span>eBook + PDF</span></div>
+                    </div>
+                    <span class="btn-buy disabled" style="font-size:12px;padding:14px 34px;">Coming Soon</span>
+                </div>
+                <p class="ma-quote">&ldquo;We didn&rsquo;t find the light. We became it.&rdquo;</p>
+            </div>
+        </a>
 
         <!-- ★ THE TWILIGHT THREAD — NEW RELEASE HERO ★ -->
         <a href="https://secretwhisperpress.gumroad.com/l/twilight-thread" target="_blank" class="tt-hero">
@@ -550,6 +617,7 @@
             </div>
             <div class="footer-col">
                 <h4>Store</h4>
+                <a href="#books">Midnight, Again. &#10022; Soon</a>
                 <a href="#notify">The Twilight Thread &#10022; Soon</a>
                 <a href="https://secretwhisperpress.gumroad.com/l/the-lanterns-of-lost-hours" target="_blank">The Lanterns of Lost Hours</a>
                 <a href="#">Ghost in the Machine &#10022; Soon</a>
